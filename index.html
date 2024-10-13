@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeputyMods - LSPDFR Mods</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <h1>DeputyMods - LSPDFR Mods</h1>
+  </header>
+
+  <nav>
+    <a href="#home" onclick="showHomePage()">Home</a>
+    <a href="#mods" onclick="showModsPage()">Mods List</a>
+  </nav>
+
+  <!-- Home Page Section -->
+  <div id="home-page" class="container">
+    <h2>Welcome to DeputyMods</h2>
+    <p>Your one-stop shop for LSPDFR mods.</p>
+  </div>
+
+  <!-- Mods Page Section -->
+  <div id="mods-page" class="container" style="display:none;">
+    <h2>LSPDFR Mods List</h2>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search mods by name or tag..." oninput="filterMods()" />
+    
+    <!-- Mods List -->
+    <ul id="mod-list" class="mod-list"></ul>
+  </div>
+
+  <footer>
+    <p>DeputyMods &copy; 2024</p>
+  </footer>
+
+  <!-- External JS -->
+  <script src="links.js"></script>
+  <script>
+    // Function to show the home page
+    function showHomePage() {
+      document.getElementById('home-page').style.display = 'block';
+      document.getElementById('mods-page').style.display = 'none';
+    }
+
+    // Function to show the mods list
+    function showModsPage() {
+      document.getElementById('home-page').style.display = 'none';
+      document.getElementById('mods-page').style.display = 'block';
+      loadMods();  // Load mods when the page is visible
+    }
+
+    // Load and display the mods with tags in an oval shape
+    function loadMods() {
+      const modList = document.getElementById('mod-list');
+      modList.innerHTML = '';  // Clear any existing mods
+
+      modLinks.forEach(mod => {
+        const modItem = document.createElement('li');
+        modItem.classList.add('mod-item');
+
+        const modImage = document.createElement('img');
+        modImage.src = mod.image;
+
+        const modName = document.createElement('h3');
+        modName.textContent = mod.name;
+
+        const modLink = document.createElement('button');
+        modLink.textContent = 'Download';
+        modLink.onclick = () => window.open(mod.url, '_blank');
+        modLink.classList.add('download-button');
+
+        // Create tag elements
+        const tagsContainer = document.createElement('div');
+        tagsContainer.classList.add('tags');
+
+        mod.tags.forEach(tag => {
+          const tagElement = document.createElement('span');
+          tagElement.classList.add('tag');
+          tagElement.textContent = tag;
+          tagsContainer.appendChild(tagElement);
+        });
+
+        // Append elements to mod item
+        modItem.appendChild(modImage);
+        modItem.appendChild(modName);
+        modItem.appendChild(modLink);
+        modItem.appendChild(tagsContainer);
+        modList.appendChild(modItem);
+      });
+    }
+
+    // Filter mods based on the search input
+    function filterMods() {
+      const searchInput = document.getElementById('searchBar').value.toLowerCase();
+      const modItems = document.querySelectorAll('.mod-item');
+
+      modItems.forEach(modItem => {
+        const modName = modItem.querySelector('h3').textContent.toLowerCase();
+        const modTags = Array.from(modItem.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+
+        if (modName.includes(searchInput) || modTags.some(tag => tag.includes(searchInput))) {
+          modItem.style.display = 'flex'; // Show mod item
+        } else {
+          modItem.style.display = 'none'; // Hide mod item
+        }
+      });
+    }
+
+    // Automatically load mods when the page loads
+    window.onload = function() {
+      loadMods();
+    };
+  </script>
+</body>
+</html>
