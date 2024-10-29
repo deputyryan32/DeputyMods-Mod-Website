@@ -3,13 +3,13 @@ const modLinks = [
     {
       name: "Police AI SHVDN Edition",
       url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49024-policeai-shvdn-edition-wip/",
-      image: "assets\PoliceAISHV.png",
+      image: "assets/PoliceAISHV.png",
       tags: ["AI", "Plugins"]
     },
     {
       name: "PistolRedirect",
       url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49024-policeai-shvdn-edition-wip/",
-      image: "assets\PistolRedirect.png",
+      image: "assets/PistolRedirect.png",
       tags: ["SHVDN", "Scripts"]
     },
     {
