@@ -1,10 +1,16 @@
 // links.js
 const modLinks = [
     {
-      name: "Police AI",
-      url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/48971-policeai/",
-      image: "assets/policeai.png",
+      name: "Police AI SHVDN Edition",
+      url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49024-policeai-shvdn-edition-wip/",
+      image: "assets\PoliceAISHV.png",
       tags: ["AI", "Plugins"]
+    },
+    {
+      name: "PistolRedirect",
+      url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49024-policeai-shvdn-edition-wip/",
+      image: "assets\PistolRedirect.png",
+      tags: ["SHVDN", "Scripts"]
     },
     {
       name: "Outdated Deputy Ryan's Pursuit Callouts",
