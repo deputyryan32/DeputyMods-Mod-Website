@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DeputyMods - LSPDFR Mods</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <!-- Navigation Bar -->
   <header>
-    <h1>DeputyMods - LSPDFR Mods</h1>
+    <h1>DeputyMods - GTAV Mods</h1>
   </header>
 
   <nav>
@@ -20,12 +21,24 @@
   <!-- Home Page Section -->
   <div id="home-page" class="container">
     <h2>Welcome to DeputyMods</h2>
-    <p>Your one-stop shop for LSPDFR mods.</p>
+    <p>Your one-stop shop for our GTAV mods.</p>
+    
+    <!-- About DeputyMods Section -->
+    <section id="about-deputymods">
+      <h3>About DeputyMods</h3>
+      <p>DeputyMods is a GTAV development team dedicated to enhancing the GTAV experience through custom mods and plugins. Our team specializes in creating mods using ScriptHookVDotNet (SHVDN) and RAGE Plugin Hook, although we now primarily focus on SHVDN. With a strong commitment to realism and quality, we aim to improve gameplay with unique mods designed to provide a more immersive experience.</p>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support">
+      <h3>Support</h3>
+      <p>For any inquiries or support requests, please contact us at: <a href="mailto:RyansDiscordServers@gmail.com">RyansDiscordServers@gmail.com</a></p>
+    </section>
   </div>
 
   <!-- Mods Page Section -->
   <div id="mods-page" class="container" style="display:none;">
-    <h2>LSPDFR Mods List</h2>
+    <h2>GTAV Mods List</h2>
 
     <!-- Search Bar -->
     <input type="text" id="searchBar" placeholder="Search mods by name or tag..." oninput="filterMods()" />
@@ -69,10 +82,15 @@
         const modName = document.createElement('h3');
         modName.textContent = mod.name;
 
-        const modLink = document.createElement('button');
-        modLink.textContent = 'Download';
-        modLink.onclick = () => window.open(mod.url, '_blank');
-        modLink.classList.add('download-button');
+        const modLinkLSPDFR = document.createElement('button');
+        modLinkLSPDFR.textContent = 'Download from LSPDFR';
+        modLinkLSPDFR.onclick = () => window.open(mod.url, '_blank');
+        modLinkLSPDFR.classList.add('download-button', 'lsfdpr-button');
+
+        const modLinkGPM = document.createElement('button');
+        modLinkGPM.textContent = 'Download from GTAPoliceMods';
+        modLinkGPM.onclick = () => window.open(mod.gpmUrl, '_blank');
+        modLinkGPM.classList.add('download-button', 'gpm-button');
 
         // Create tag elements
         const tagsContainer = document.createElement('div');
@@ -88,7 +106,8 @@
         // Append elements to mod item
         modItem.appendChild(modImage);
         modItem.appendChild(modName);
-        modItem.appendChild(modLink);
+        modItem.appendChild(modLinkLSPDFR);
+        modItem.appendChild(modLinkGPM);
         modItem.appendChild(tagsContainer);
         modList.appendChild(modItem);
       });
