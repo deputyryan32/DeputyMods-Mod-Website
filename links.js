@@ -1,6 +1,30 @@
 // links.js
 const modLinks = [
   {
+    name: "PedPurge",
+    url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49255-pedpurge/",
+    gpmUrl: "https://gtapolicemods.com/files/file/337-pedpurge/",
+    image: "assets/PedPurge.png",
+    tags: ["Scripts", "Plugins", "Menu"]
+
+  },
+  {
+    name: "BetterInteractionMenu",
+    url: "error.html",
+    gpmUrl: "https://gtapolicemods.com/files/file/328-betterinteractionmenu/",
+    image: "assets/BIM.png",
+    tags: ["Scripts", "Plugins", "Menu"]
+
+  },
+  {
+    name: "SecondAmendmentNPCs",
+    url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49211-secondamendmentnpcs/",
+    gpmUrl: "https://gtapolicemods.com/files/file/319-secondamendmentnpcs/",
+    image: "assets/SANPCS.webp",
+    tags: ["Scripts", "Plugins", "AI"]
+
+  },
+  {
     name: "Police AI SHVDN Edition",
     url: "https://www.lcpdfr.com/downloads/gta5mods/scripts/49024-policeai-shvdn-edition-wip/",
     gpmUrl: "https://gtapolicemods.com/files/file/60-policeai-shvdn-edition-wip/",
